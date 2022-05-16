@@ -3,20 +3,19 @@
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
-EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["MusicizeAPI.csproj", "."]
-RUN dotnet restore "./MusicizeAPI.csproj"
+COPY ["UserMicroservice.csproj", "UserMicroservice/"]
+RUN dotnet restore "UserMicroservice/UserMicroservice.csproj"
+WORKDIR "/src/UserMicroservice"
 COPY . .
-WORKDIR "/src/."
-RUN dotnet build "MusicizeAPI.csproj" -c Release -o /app/build
+RUN dotnet build "UserMicroservice.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "MusicizeAPI.csproj" -c Release -o /app/publish
+RUN dotnet publish "UserMicroservice.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "MusicizeAPI.dll"]
+ENTRYPOINT ["dotnet", "UserMicroservice.dll"]

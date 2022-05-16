@@ -49,8 +49,8 @@ jobs:
         array: [
           {
             PATH_TO_DOCKERFILE: "./Back-end/UserMicroservice/",
-            DOCKER_IMAGE_NAME: "UserMicroservice",
-            DOCKER_REPO_NAME: "i441585y/UserMicroservice"
+            DOCKER_IMAGE_NAME: "usermicroservice",
+            DOCKER_REPO_NAME: "i441585y/usermicroservice"
           },
       ]
 

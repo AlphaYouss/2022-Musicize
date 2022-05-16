@@ -9,10 +9,10 @@ jobs:
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
-          - "./back-end/UserMicroservice/UserMicroservice.csproj"
-          - "./back-end/UserMicroservice.Test/UserMicroservice.Test.csproj"
-          - "./back-end/Gateway/Gateway.csproj"
-          - "./back-end/MusicizeAPI.sln"
+          - "./Back-end/UserMicroservice/UserMicroservice.csproj"
+          - "./Back-end/UserMicroservice.Test/UserMicroservice.Test.csproj"
+          - "./Back-end/Gateway/Gateway.csproj"
+          - "./Back-end/MusicizeAPI.sln"
 
     steps:
       - name: Clone repo to runner

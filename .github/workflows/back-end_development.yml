@@ -39,23 +39,6 @@ jobs:
         with:
           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
 
-
-  sonarcloud: 
-    runs-on: self-hosted
-    strategy:
-      matrix: 
-        PATH_TO_TEST_SLN:
-          - "./Back-end/MusicizeAPI.sln"
-
-    steps:
-      - name: Clone repo to runner
-        uses: actions/checkout@v3
-
-      - name: sonarcloud 
-        uses: ./.github/actions/back-end/sonarcloud
-        with:
-          PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_SLN}}
-
   containerize:
     runs-on: self-hosted
     needs:

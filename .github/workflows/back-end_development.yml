@@ -44,7 +44,6 @@ jobs:
     needs:
       - build
       - test
-      - sonarcloud
     strategy:
       matrix: 
         array: [

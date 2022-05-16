@@ -52,6 +52,11 @@ jobs:
             DOCKER_IMAGE_NAME: "usermicroservice",
             DOCKER_REPO_NAME: "i441585y/usermicroservice"
           },
+          {
+            PATH_TO_DOCKERFILE: "./Back-end/Gateway/",
+            DOCKER_IMAGE_NAME: "gateway",
+            DOCKER_REPO_NAME: "i441585y/gateway"
+          },
       ]
 
     steps:

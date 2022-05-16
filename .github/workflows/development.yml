@@ -59,7 +59,7 @@ jobs:
       uses: actions/checkout@v3
 
     - name: build 
-      uses: ./.github/actions/containerize
+      uses: ./.github/actions/back-end/containerize
       with:
         PATH_TO_DOCKERFILE: ${{matrix.array.PATH_TO_DOCKERFILE}}
         DOCKER_IMAGE_NAME: ${{matrix.array.DOCKER_IMAGE_NAME}}

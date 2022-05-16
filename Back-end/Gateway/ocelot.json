@@ -1,0 +1,57 @@
+﻿
+  {
+    "Routes": [
+      {
+        "DownstreamPathTemplate": "/users",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7140
+          }
+        ],
+        "UpstreamPathTemplate": "/users",
+        "UpstreamHttpMethod": [ "GET" ],
+        "SwaggerKey": "UserMicroservice"
+      },
+      {
+        "DownstreamPathTemplate": "/user/{id}",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7140
+          }
+        ],
+        "UpstreamPathTemplate": "/user/{id}",
+        "UpstreamHttpMethod": [ "PUT", "GET", "DELETE" ],
+        "SwaggerKey": "UserMicroservice"
+      },
+      {
+        "DownstreamPathTemplate": "/user",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7140
+          }
+        ],
+        "UpstreamPathTemplate": "/user",
+        "UpstreamHttpMethod": [ "POST" ],
+        "SwaggerKey": "UserMicroservice"
+      }
+    ],
+    "SwaggerEndPoints": [
+      {
+        "Key": "UserMicroservice",
+        "Config": [
+          {
+            "Name": "UserMicroservice API",
+            "Version": "v1",
+            "Url": "https://localhost:7140/swagger/v1/swagger.json"
+          }
+        ]
+      }
+    ],
+    "GlobalConfiguration": {}
+  }

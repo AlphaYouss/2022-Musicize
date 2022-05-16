@@ -3,7 +3,7 @@ description: "A custom composite action to build a solution or microservice"
 inputs:
   PATH_TO_SLN_OR_CSPROJ:
     required: true
-    decription: "Path to the csproj file of the solution or microservice"
+    decription: "Path to the sln or csproj file of the solution or microservice"
 runs:
   using: "composite"
   steps:

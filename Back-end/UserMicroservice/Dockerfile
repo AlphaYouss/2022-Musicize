@@ -7,16 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["Musicize API.csproj", "."]
-RUN dotnet restore "./Musicize API.csproj"
+COPY ["MusicizeAPI.csproj", "."]
+RUN dotnet restore "./MusicizeAPI.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "Musicize API.csproj" -c Release -o /app/build
+RUN dotnet build "MusicizeAPI.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Musicize API.csproj" -c Release -o /app/publish
+RUN dotnet publish "MusicizeAPI.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Musicize API.dll"]
+ENTRYPOINT ["dotnet", "MusicizeAPI.dll"]

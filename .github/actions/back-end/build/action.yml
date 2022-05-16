@@ -1,4 +1,4 @@
-name: "Build"
+name: "build"
 description: "A custom composite action to build a solution or microservice"
 inputs:
   PATH_TO_SLN_OR_CSPROJ:

@@ -34,16 +34,58 @@ jobs:
       - name: Clone repo to runner
         uses: actions/checkout@v3
 
-      - name: build 
+      - name: test 
         uses: ./.github/actions/back-end/test
         with:
           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
+
+
+  sonarcloud: 
+    name: sonarcloud
+    runs-on: self-hosted
+        steps:
+      - name: Set up JDK 11
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.11
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v1
+        with:
+          path: ~\sonar\cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v1
+        with:
+          path: .\.sonar\scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        shell: powershell
+        run: |
+          New-Item -Path .\.sonar\scanner -ItemType Directory
+          dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
+      - name: Build and analyze
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        shell: powershell
+        run: |
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"AlphaYouss_2022-Musicize" /o:"alphayouss" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          dotnet build -restore './Back-end/MusicizeAPI.sln'
+          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
 
   containerize:
     runs-on: self-hosted
     needs:
       - build
       - test
+      - sonarcloud
     strategy:
       matrix: 
         array: [
@@ -63,7 +105,7 @@ jobs:
     - name: Clone repo to runner
       uses: actions/checkout@v3
 
-    - name: build 
+    - name: containerize 
       uses: ./.github/actions/back-end/containerize
       with:
         PATH_TO_DOCKERFILE: ${{matrix.array.PATH_TO_DOCKERFILE}}

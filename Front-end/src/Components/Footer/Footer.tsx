@@ -1,25 +1,26 @@
 import * as React from "react";
 import {Component} from "react";
-import "./Footer.css"
+import "./js_css/Footer.css"
 
 class Footer extends Component {
     render() {
         return (
-            <div className="main-footer">
-                <div className="placecontent">
-                    <span className="xahrefs"> 2022 Gradest INC </span>
-                    <span> | </span>
-                    <span className="xahrefs"> Alle rechten voorbehouden </span>
-                    <span> | </span>
-                    <a className="ahrefs" href={'https://www.citrusandriessen.nl/en/disclaimer/'}> Disclaimer </a>
-                    <span> | </span>
-                    <a className="ahrefs" href={'https://www.citrusandriessen.nl/en/privacy/'}> Privacy </a>
+            <footer className="footer-area footer--light">
+                <div className="mini-footer">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12">
+                                <div className="copyright-text">
+                                    <p>© 2022
+                                        <a href="#" className="ml-5">MUSICIZE</a>. All rights reserved. Created by 
+                                        <a href="#" className="ml-5">AlphaYouss</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div className="row" style={{fontSize: '0.9rem'}}>
-                    <span className="col-12 text-white small m-0 p-0">[cluster-1] @ {process.env.REACT_APP_AXIOS_BASE_URL}</span>
-                    <span className="col-12 text-white small m-0 p-0">build 1.0 ({process.env.NODE_ENV})</span>
-                </div>
-            </div>
+            </footer>
         );
     }
 }

@@ -21,18 +21,14 @@ namespace Musicize_API.Data
                     new User()
                     {
                         Id = Guid.Parse("38488db2-47b6-4493-b071-479199e76541").ToString(),
-                        FirstName = "Youssef",
-                        LastName = "El Jaddaoui",
-                        Email = "youss.eljaddaoui@gmail.com",
-                        DateOfBirth = new DateTime(2000, 1, 31).ToString("dd-MM-yyyy"),
+                        FullName = "Youssef El Jaddaoui",
+                        LoginMethod = "Google"
                     },
                     new User()
                     {
                         Id = Guid.NewGuid().ToString(),
-                        FirstName = "Test",
-                        LastName = "Gebruiker",
-                        Email = "test@gmail.com",
-                        DateOfBirth = new DateTime(2002, 4, 26).ToString("dd-MM-yyyy"),
+                        FullName = "Test Gebruiker",
+                        LoginMethod = "Google"
                     }
                 };
 

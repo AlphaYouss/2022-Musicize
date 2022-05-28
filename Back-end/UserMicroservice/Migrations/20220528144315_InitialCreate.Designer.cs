@@ -5,15 +5,14 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Musicize_API.Context;
-using Musicize_API.Model;
 
 #nullable disable
 
 namespace Musicize_API.Migrations
 {
     [DbContext(typeof(UserDBContext))]
-    [Migration("20220411130406_initialDb")]
-    partial class initialDb
+    [Migration("20220528144315_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,19 +28,11 @@ namespace Musicize_API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("DateOfBirth")
+                    b.Property<string>("FullName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
+                    b.Property<string>("LoginMethod")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

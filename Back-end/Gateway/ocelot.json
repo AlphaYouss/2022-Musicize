@@ -3,7 +3,7 @@
     "Routes": [
       {
         "DownstreamPathTemplate": "/users",
-        "DownstreamScheme": "https",
+        "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
@@ -16,7 +16,7 @@
       },
       {
         "DownstreamPathTemplate": "/user/{id}",
-        "DownstreamScheme": "https",
+        "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
@@ -29,7 +29,7 @@
       },
       {
         "DownstreamPathTemplate": "/user",
-        "DownstreamScheme": "https",
+        "DownstreamScheme": "http",
         "DownstreamHostAndPorts": [
           {
             "Host": "localhost",
@@ -48,7 +48,7 @@
           {
             "Name": "UserMicroservice API",
             "Version": "v1",
-            "Url": "https://localhost:7140/swagger/v1/swagger.json"
+            "Url": "http://localhost:7140/swagger/v1/swagger.json"
           }
         ]
       }

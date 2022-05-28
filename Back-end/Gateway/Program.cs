@@ -22,8 +22,16 @@ builder.Host.UseContentRoot(Directory.GetCurrentDirectory())
         s.AddSwaggerForOcelot(configuration);
     });
 
+builder.Services.AddCors(options => options.AddPolicy("Policy", builder =>
+{
+    builder.WithOrigins("http://localhost:3000")
+             .AllowAnyMethod()
+             .AllowAnyHeader();
+}));
 
 var app = builder.Build();
+
+app.UseCors("Policy");
 
 app.UseSwaggerForOcelotUI(opt =>
 {

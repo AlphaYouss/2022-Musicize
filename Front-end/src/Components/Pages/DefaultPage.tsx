@@ -1,36 +1,26 @@
 import * as React from "react";
 import {Component} from "react";
-import '../HeaderNavbar/HeaderNavbar.css';
 import HeaderNavbar from "../HeaderNavbar/HeaderNavbar";
 import Footer from "../Footer/Footer";
+import WhatAreWe from "../../Atoms/WhatAreWe/WhatAreWe";
+import WhatWeDo from "../../Atoms/WhatWeDo/WhatWeDo";
+import Login from "../../Atoms/Login/Login";
 
-interface props {
-    name?: string
-}
-
-class DefaultPage extends Component<props> {
-    state = {
-        redirect: false,
-        username: '',
-        password: ''
-    }
+class DefaultPage extends Component{
 
     componentDidMount() {
-        document.title="Gradest | Inloggen";
+        document.title="Musicize | Home";
     }
 
     render() {
         return (
             <div className="page-container">
-                <div className="content-wrap">
-                    <HeaderNavbar/>
-                </div>
-                <div className="content-container contentcenter mt-5">
-                    
-                </div>
-                <div className="footer">
-                    <Footer/>
-                </div>
+                <HeaderNavbar/>
+                <WhatAreWe/>
+                <WhatWeDo/>
+                <Login/>
+                <div className="four" id="contact"></div>
+                <Footer/>
             </div>
         );
     }

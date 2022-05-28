@@ -1,0 +1,24 @@
+body {
+ position:relative;
+ font-size:15px
+}
+.mini-footer {
+ background:#001f54;
+ text-align:center;
+ padding: 32px 0
+}
+.mini-footer p {
+ margin:0;
+ line-height:26px;
+ font-size:15px;
+ color:#999
+}
+.mini-footer p a {
+ color:#ff5858
+}
+.mini-footer p a:hover {
+ color:#777
+}
+.ml-5{
+    margin-left: 3px;
+}

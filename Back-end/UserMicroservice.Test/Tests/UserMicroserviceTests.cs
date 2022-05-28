@@ -40,11 +40,12 @@ namespace UserMicroservice.Test
         [Fact]
         public async void AddUserPassed()
         {
-            User user = new User();
-            user.FirstName = "Henk";
-            user.LastName = "Steen";
-            user.DateOfBirth = new DateTime(1971, 3, 22).ToString("dd-MM-yyyy");
-            user.Id = "38488db2-47b6-2213-b076-479199e31541";
+            User user = new User
+            {
+                FullName = "Henk Steen",
+                LoginMethod = "Google",
+                Id = "38488db2-47b6-2213-b076-479199e31541"
+            };
 
             var webAppFactory = new UserMicroserviceTests();
             HttpClient httpClient = webAppFactory.CreateClient();
@@ -61,11 +62,12 @@ namespace UserMicroservice.Test
         [Fact]
         public async void EditUserPassed()
         {
-            User user = new User();
-            user.FirstName = "Henk";
-            user.LastName = "Steen";
-            user.DateOfBirth = new DateTime(1971, 3, 22).ToString("dd-MM-yyyy");
-            user.Id = "38488db2-47b6-2213-b076-479199e31541";
+            User user = new User
+            {
+                FullName = "Heenk Steen",
+                LoginMethod = "Google",
+                Id = "38488db2-47b6-2213-b076-479199e31541"
+            };
 
             var webAppFactory = new UserMicroserviceTests();
             HttpClient httpClient = webAppFactory.CreateClient();

@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
 import DefaultPage from "./Components/Pages/DefaultPage";
+import GoogleSignInPage from "./Components/Pages/GoogleSignInPage";
 
 function App() {
   return (
     <Router>
     <Routes>
         <Route exact path="/" element={<DefaultPage/>} />
+        <Route exact path="/google-sign-in" element={<GoogleSignInPage/>} />
     </Routes>
 </Router>
 //  <div className="App">

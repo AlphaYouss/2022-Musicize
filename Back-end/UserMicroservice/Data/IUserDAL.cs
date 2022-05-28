@@ -8,7 +8,7 @@ namespace Musicize_API.Data
         ActionResult AddUser(User user);
         List<User> GetUsers();
         ActionResult PutUser(User user);
-        User GetUser(string id);
+        ActionResult GetUser(string id);
         ActionResult DeleteUser(string id);
     }
 }

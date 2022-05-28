@@ -20,6 +20,13 @@ builder.Services.AddScoped<IUserDAL, UserDAL>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options => options.AddPolicy("Policy", builder =>
+{
+    builder.WithOrigins("http://localhost:3000")
+             .AllowAnyMethod()
+             .AllowAnyHeader();
+}));
+
 var app = builder.Build();
 
 // if 'dotnet run seeddata' is called, run the SeedData method
@@ -43,6 +50,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("Policy");
 
 // Returns all users
 app.MapGet("/users", ([FromServices] IUserDAL db) =>

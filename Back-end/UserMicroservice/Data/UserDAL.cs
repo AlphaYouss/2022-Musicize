@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Musicize_API.Context;
 using Musicize_API.Model;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Musicize_API.Data
 {
@@ -29,9 +31,18 @@ namespace Musicize_API.Data
             return new OkResult();
         }
 
-        public User GetUser(string id)
+        public ActionResult GetUser(string id)
         {
-            return db.User.Where(x => x.Id == id).FirstOrDefault();
+            User user =  db.User.Where(x => x.Id == id).FirstOrDefault();
+
+            if(user != null)
+            {
+                return new OkObjectResult(user);
+            }
+            else
+            {
+                return new NotFoundResult();
+            }
         }
 
         public ActionResult DeleteUser(string id)

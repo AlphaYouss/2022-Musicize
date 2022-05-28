@@ -46,9 +46,16 @@ namespace UserHandler.Microservice.Test.Stubs
             }
         }
 
-        public User GetUser(string id)
+        public ActionResult GetUser(string id)
         {
-            return new User();
+            if (testValue == true)
+            {
+                return new OkResult();
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public ActionResult DeleteUser(string id)

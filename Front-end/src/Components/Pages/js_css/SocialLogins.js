@@ -117,21 +117,21 @@ document.addEventListener('DOMContentLoaded', function() {
         'Access-Control-Allow-Headers':'application/json',
       },
       complete: function (data) {
-        if(data.responseText.includes("404"))
-        {
-          CreateUser(hashedID, hashedName, hashedLoginMethod);
-        }
-        else if (data.responseText.includes("200")){
-          document.cookie = "id=" + hashedID +";";
-          document.cookie = "fullName=" + hashedName + ";";
-          document.cookie = "loginMethod=" + hashedLoginMethod + ";";
+        // if(data.responseText.includes("404"))
+        // {
+        //   CreateUser(hashedID, hashedName, hashedLoginMethod);
+        // }
+        // else if (data.responseText.includes("200")){
+        //   document.cookie = "id=" + hashedID +";";
+        //   document.cookie = "fullName=" + hashedName + ";";
+        //   document.cookie = "loginMethod=" + hashedLoginMethod + ";";
 
-          var date = new Date();
-          date.setTime(date.getTime()+(60*60*1000));
-          document.cookie = "expires="+date.toGMTString();
+        //   var date = new Date();
+        //   date.setTime(date.getTime()+(60*60*1000));
+        //   document.cookie = "expires="+date.toGMTString();
 
-          console.log(document.cookie);
-        }
+        //   console.log(document.cookie);
+        // }
       },
     });
   }
@@ -144,21 +144,21 @@ document.addEventListener('DOMContentLoaded', function() {
       "loginMethod": hashedLoginMethod
     };
   
-    $.ajax({
-      type: 'POST',
-      crossDomain: true,
-      contentType: "application/json",
-      url: 'http://localhost:7063/user',
-      headers: {
-        'Access-Control-Allow-Credentials' : true,
-        'Access-Control-Allow-Origin':'*',
-        'Access-Control-Allow-Methods':'GET',
-        'Access-Control-Allow-Headers':'application/json',
-      },
-      data: JSON.stringify(user),
-      complete: function (data) {
-        console.log('Created user: ', data.response);
-      },
-    });
+    // $.ajax({
+    //   type: 'POST',
+    //   crossDomain: true,
+    //   contentType: "application/json",
+    //   url: 'http://localhost:7063/user',
+    //   headers: {
+    //     'Access-Control-Allow-Credentials' : true,
+    //     'Access-Control-Allow-Origin':'*',
+    //     'Access-Control-Allow-Methods':'GET',
+    //     'Access-Control-Allow-Headers':'application/json',
+    //   },
+    //   data: JSON.stringify(user),
+    //   complete: function (data) {
+    //     console.log('Created user: ', data.response);
+    //   },
+    // });
   }
 });

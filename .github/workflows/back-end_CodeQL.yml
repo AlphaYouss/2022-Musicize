@@ -9,7 +9,7 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "codeQL"
+name: "back-end_codeQL"
 
 on:
   push:
@@ -77,4 +77,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: code-coverage-report
-        path: /home/runner/work/back-end/results/csharp.sarif
+        path: /home/runner/work/2022-Musicize/results/csharp.sarif

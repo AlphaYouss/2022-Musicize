@@ -1,0 +1,65 @@
+name: back-end_kubernetes
+on:
+  push:
+    branches: [kubernetes]
+
+jobs:
+  build: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        PATH_TO_SLN_OR_CSPROJ:
+          - "./Basic_EF_App/EF_App/EF_App.csproj"
+
+    steps:
+      - name: Clone repo to runner
+        uses: actions/checkout@v3
+
+      - name: build 
+        uses: ./.github/actions/back-end/build
+        with:
+          PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
+
+  test: 
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: 
+        PATH_TO_TEST_CSPROJ:
+          - "./Basic_EF_App/EF_App/EF_App.csproj"
+
+    steps:
+      - name: Clone repo to runner
+        uses: actions/checkout@v3
+
+      - name: test 
+        uses: ./.github/actions/back-end/test
+        with:
+          PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
+
+  containerize:
+    runs-on: ubuntu-latest
+    needs:
+      - build
+      - test
+    strategy:
+      matrix: 
+        array: [
+          {
+            PATH_TO_DOCKERFILE: "./Basic_EF_App/EF_App/",
+            DOCKER_IMAGE_NAME: "ef_app",
+            DOCKER_REPO_NAME: "i441585y/ef_app"
+          },
+      ]
+
+    steps:
+    - name: Clone repo to runner
+      uses: actions/checkout@v3
+
+    - name: containerize 
+      uses: ./.github/actions/back-end/containerize
+      with:
+        PATH_TO_DOCKERFILE: ${{matrix.array.PATH_TO_DOCKERFILE}}
+        DOCKER_IMAGE_NAME: ${{matrix.array.DOCKER_IMAGE_NAME}}
+        DOCKER_REPO_NAME: ${{matrix.array.DOCKER_REPO_NAME}}
+        DOCKER_ACCTOKEN: ${{secrets.DOCKER_ACCTOKEN}}
+        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}

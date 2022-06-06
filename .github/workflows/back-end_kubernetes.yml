@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
-          - "./Basic_EF_App/EF_App/EF_App.csproj"
+          - "./Back-end/Basic_EF_App/EF_App/EF_App.csproj"
 
     steps:
       - name: Clone repo to runner
@@ -25,7 +25,7 @@ jobs:
     strategy:
       matrix: 
         PATH_TO_TEST_CSPROJ:
-          - "./Basic_EF_App/EF_App/EF_App.csproj"
+          - "./Back-end/Basic_EF_App/EF_App/EF_App.csproj"
 
     steps:
       - name: Clone repo to runner
@@ -45,7 +45,7 @@ jobs:
       matrix: 
         array: [
           {
-            PATH_TO_DOCKERFILE: "./Basic_EF_App/EF_App/",
+            PATH_TO_DOCKERFILE: "./Back-end//Basic_EF_App/EF_App/",
             DOCKER_IMAGE_NAME: "ef_app",
             DOCKER_REPO_NAME: "i441585y/ef_app"
           },

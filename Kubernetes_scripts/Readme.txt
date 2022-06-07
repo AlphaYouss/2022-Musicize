@@ -4,3 +4,4 @@ Things you need for the Kubernetes PoC:
         - Kubectl
         - Kind
     Internet connection
+    JMeter for testing scaling

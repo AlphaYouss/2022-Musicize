@@ -5,7 +5,7 @@ on:
 
 jobs:
   build: 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix: 
         PATH_TO_SLN_OR_CSPROJ:
@@ -24,7 +24,7 @@ jobs:
           PATH_TO_SLN_OR_CSPROJ: ${{matrix.PATH_TO_SLN_OR_CSPROJ}}
 
   test: 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     strategy:
       matrix: 
         PATH_TO_TEST_CSPROJ:
@@ -40,7 +40,7 @@ jobs:
           PATH_TO_TEST_CSPROJ: ${{matrix.PATH_TO_TEST_CSPROJ}}
 
   containerize:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     needs:
       - build
       - test

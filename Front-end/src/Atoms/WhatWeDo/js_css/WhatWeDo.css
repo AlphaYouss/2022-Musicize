@@ -1,0 +1,74 @@
+.two{
+  background-color: #13293D;
+  min-height: 65vh;
+  border-bottom: 5px solid black;
+  justify-content: center;
+  display: flex;
+}
+
+.WhatWeDo{
+    padding: 7.5% 0% 0% 5%;
+    font-size: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 5px 5px #000;
+    line-height: 1;
+    display: flex;
+}
+.item{
+  margin-left: 5%;
+  display: block;
+  top: 5em;
+  width: 60%;
+  font-size: 1.75em;
+}
+.item-1, 
+.item-2, 
+.item-3 {
+    margin-left: 15%;
+    display: block;
+    top: 10em;
+    width: 60%;
+	  animation-duration: 20s;
+	  animation-timing-function: ease-in-out;
+	  animation-iteration-count: infinite;
+}
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
+}
+
+.microphone{
+  display: flex;
+  align-items: flex-end;
+}
+
+.white{
+  color: #fff;
+}

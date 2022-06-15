@@ -1,0 +1,64 @@
+  .box {
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+    background: #fbfcee;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+  .wave {
+    opacity: 1;
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    background: #218380;
+    width: 1250px;
+    height: 1250px;
+    margin-top: -250px;
+    transform-origin: 50% 58%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+  }
+  .wave.-two {
+    animation: drift 7000ms infinite linear;
+    background: #13293D;
+  }
+  .wave.-three {
+    animation: drift 5000ms infinite linear;
+    background: #FF715B;
+  }
+  .text{
+      padding: 25px;
+      z-index: 9999999999999999;
+      position: relative;
+  }
+  .title{
+    font-family: 'Raleway', sans-serif;
+    text-shadow: 5px 5px #000;
+    font-style:oblique;
+    font-weight: bold;
+    font-size: 4rem;
+    z-index: 9999999999999999;
+    position: relative;
+    line-height: 1;
+  }
+  .sub-title{
+    color: #000;
+    text-decoration: underline;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  @keyframes drift {
+    from {
+      transform: rotate(0deg);
+    }
+    from {
+      transform: rotate(360deg);
+    }
+  }
+  .one{
+    min-height: 100vh;
+    align-items: center;
+    display: flex;
+    border-bottom: 5px solid black;
+  }

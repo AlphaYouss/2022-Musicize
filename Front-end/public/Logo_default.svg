@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-0.337 -0.698 322.826 64.598" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <style bx:fonts="Raleway">@import url(https://fonts.googleapis.com/css2?family=Raleway%3Aital%2Cwght%400%2C100%3B0%2C200%3B0%2C300%3B0%2C400%3B0%2C500%3B0%2C600%3B0%2C700%3B0%2C800%3B0%2C900%3B1%2C100%3B1%2C200%3B1%2C300%3B1%2C400%3B1%2C500%3B1%2C600%3B1%2C700%3B1%2C800%3B1%2C900&amp;display=swap);</style>
+  </defs>
+  <g transform="matrix(1, 0, 0, 1.006216, 0, 0.004342)">
+    <title>Layer 1</title>
+    <g fill="#0EA47A" transform="matrix(0.9,0,0,0.9,0,0)" featurekey="symbolContainer" id="SvgjsG1829">
+      <rect id="svg_1" ry="10" rx="10" height="71" width="75" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(255, 113, 91);"/>
+    </g>
+    <g fill="#111111" transform="matrix(0.7273035704306213,0,0,0.7273035704306213,13.81843279942482,3.3339424556753006)" featurekey="monogramFeature-0" id="SvgjsG1830"/>
+    <g fill="#FFFFFF" transform="matrix(1.37103, 0, 0, 1.37103, 85.805801, -4.45435)" featurekey="nameFeature-0" id="SvgjsG1831">
+      <text style="fill: rgb(0, 0, 0); font-family: Raleway; font-size: 36.5px; font-weight: 900; line-height: 58.3503px; text-transform: uppercase; white-space: pre;" x="-0.879" y="39.94">Musicize</text>
+    </g>
+    <g fill="#FFFFFF" transform="matrix(1.37103, 0, 0, 1.37103, 83.926727, -4.966212)" featurekey="nameFeature-0" id="g-2">
+      <text style="font-family: Raleway; font-size: 36.4689px; font-weight: 900; line-height: 58.3503px; text-transform: uppercase; white-space: pre;" x="-0.879" y="40.325">MUSICIZE</text>
+    </g>
+  </g>
+  <g transform="matrix(1, 0, 0, 1.006216, -0.337181, -0.698466)">
+    <title>Layer 1</title>
+    <g fill="#0EA47A" transform="matrix(0.9,0,0,0.9,0,0)" featurekey="symbolContainer" id="g-1">
+      <rect id="rect-1" ry="10" rx="10" height="71" width="75" xmlns="http://www.w3.org/2000/svg" style="fill: rgb(255, 113, 91);"/>
+    </g>
+  </g>
+  <text style="font-family: Raleway; font-size: 50px; font-style: italic; font-weight: 900; white-space: pre;" x="11.264" y="49.578" transform="matrix(1, 0, 0, 1.006216, 0, 0.004342)">M</text>
+  <text style="fill: rgb(255, 255, 255); font-family: Raleway; font-size: 50px; font-style: italic; font-weight: 900; text-transform: capitalize; white-space: pre;" x="12.689" y="49.574" transform="matrix(1, 0, 0, 1.006216, 0, 0.004342)">M</text>
+</svg>
